@@ -3,17 +3,6 @@ import { customElement, property } from 'lit/decorators.js';
 
 @customElement('bbva-button')
 export class Button extends LitElement {
-  @property({ type: String, attribute: 'title' }) titleButton = '';
-
-  @property({ type: String, reflect: true }) variant:
-    | 'primary'
-    | 'primary-light'
-    | 'secondary' = 'primary';
-
-  @property({ type: Boolean }) disabled: boolean = false;
-
-  @property({ type: String }) type: 'button' | 'submit' = 'button';
-
   static styles = css`
     :host([variant='primary']) button {
       background-color: #001391;
@@ -56,7 +45,18 @@ export class Button extends LitElement {
     }
   `;
 
-  override render() {
+  @property({ type: String, attribute: 'title' }) titleButton = '';
+
+  @property({ type: String, reflect: true }) variant:
+    | 'primary'
+    | 'primary-light'
+    | 'secondary' = 'primary';
+
+  @property({ type: Boolean }) disabled: boolean = false;
+
+  @property({ type: String }) type: 'button' | 'submit' = 'button';
+
+  render() {
     return html`
       <button
         type=${this.type}

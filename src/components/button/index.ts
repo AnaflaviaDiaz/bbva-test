@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { Variant } from '../models/variant.js';
-import { baseStyles } from '../../tokens/base-styles.js';
+import { baseStyles } from '../../tokens/base.styles.js';
 import { buttonStyles } from './button.styles.js';
 
 @customElement('bbva-button')

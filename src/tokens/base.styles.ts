@@ -28,7 +28,7 @@ export const baseStyles = css`
     --btn-border-radius: 8px;
     --btn-padding: 16px 32px;
 
-    /* test */
-    --color-success-500: #22c55e;
+    /* typography */
+    /* --title-3xl:  */
   }
 `;

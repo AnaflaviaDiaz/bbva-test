@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js';
 
 import { Variant } from '../models/variant.js';
 import { badgeStyles } from './badge.styles.js';
-import { baseStyles } from '../../tokens/base-styles.js';
+import { baseStyles } from '../../tokens/base.styles.js';
 
 @customElement('bbva-badge')
 export class Badge extends LitElement {

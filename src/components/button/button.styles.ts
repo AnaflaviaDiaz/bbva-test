@@ -1,5 +1,5 @@
 import { css } from 'lit';
-import '../../tokens/base-styles.js';
+import '../../tokens/base.styles.js';
 
 export const buttonStyles = css`
   :host([variant='primary']) button {
@@ -30,6 +30,7 @@ export const buttonStyles = css`
   }
 
   button {
+    /* font-family: inherit; */
     border-radius: var(--btn-border-radius);
     padding: var(--btn-padding);
     border: none;

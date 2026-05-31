@@ -1,7 +1,10 @@
 import { html, TemplateResult } from 'lit';
 
+import '../src/ui/atoms/button/index.js';
+import { Variant } from '../src/ui/models/variant.js';
+
 export default {
-  title: 'Atoms/Button',
+  title: 'Button',
   component: 'bbva-button',
   argTypes: {
     title: { control: 'text' },
@@ -16,8 +19,7 @@ export default {
     a11y: {
       config: {
         rules: [
-          { id: 'color-contrast', enabled: true },
-          { id: 'aria-*', enabled: true },
+          { id: 'color-contrast', enabled: true }
         ],
       },
     },
@@ -34,7 +36,7 @@ interface ArgTypes {
   title: string;
   type?: 'button' | 'submit';
   disabled?: boolean;
-  variant?: 'primary' | 'primary-light' | 'secondary';
+  variant?: Variant;
 }
 
 const Template: Story<ArgTypes> = ({

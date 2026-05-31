@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { Variant } from '../../models/variant.js';
 
 @customElement('bbva-button')
 export class Button extends LitElement {
@@ -47,10 +48,7 @@ export class Button extends LitElement {
 
   @property({ type: String, attribute: 'title' }) titleButton = '';
 
-  @property({ type: String, reflect: true }) variant:
-    | 'primary'
-    | 'primary-light'
-    | 'secondary' = 'primary';
+  @property({ type: String, reflect: true }) variant: Variant = 'primary';
 
   @property({ type: Boolean }) disabled: boolean = false;
 

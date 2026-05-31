@@ -1,7 +1,7 @@
 import { css, html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-import { Variant } from '../../models/variant.js';
+import { Variant } from '../models/variant.js';
 
 @customElement('bbva-badge')
 export class Badge extends LitElement {

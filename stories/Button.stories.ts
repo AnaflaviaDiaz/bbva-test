@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit';
 
-import '../src/ui/atoms/button/index.js';
-import { Variant } from '../src/ui/models/variant.js';
+import '../src/components/button/index.js';
+import { Variant } from '../src/components/models/variant.js';
 
 export default {
   title: 'Button',

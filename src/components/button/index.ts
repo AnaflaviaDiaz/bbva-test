@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { Variant } from '../../models/variant.js';
+import { Variant } from '../models/variant.js';
 
 @customElement('bbva-button')
 export class Button extends LitElement {

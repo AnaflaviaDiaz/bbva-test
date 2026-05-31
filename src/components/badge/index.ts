@@ -1,32 +1,13 @@
-import { css, html, LitElement } from 'lit';
+import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import { Variant } from '../models/variant.js';
+import { badgeStyles } from './badge.styles.js';
+import { baseStyles } from '../../tokens/base-styles.js';
 
 @customElement('bbva-badge')
 export class Badge extends LitElement {
-  static styles = css`
-    .badge__primary {
-      background-color: #001391;
-      color: #fff;
-    }
-
-    .badge__primary-light {
-      background-color: #0c6dff;
-      color: #fff;
-    }
-
-    .badge__secondary {
-      color: #070e46;
-      background-color: #f7f8f8;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 0 8px;
-      border-radius: 16px;
-    }
-  `;
+  static styles = [baseStyles, badgeStyles];
 
   @property({ type: String }) text: string = '';
 

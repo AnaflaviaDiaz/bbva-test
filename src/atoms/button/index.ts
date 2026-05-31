@@ -47,6 +47,12 @@ export class Button extends LitElement {
       padding: var(--btn-padding, 16px 32px);
       border: none;
       cursor: pointer;
+
+      &:disabled {
+        cursor: default;
+        background-color: #e2e6ea !important;
+        color: #adb8c2 !important;
+      }
     }
   `;
 

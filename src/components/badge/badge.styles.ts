@@ -1,26 +1,30 @@
 import { css } from 'lit';
+import { baseStyles } from '../../tokens/base.styles.js';
 
-export const badgeStyles = css`
-  .badge__primary {
-    background-color: var(--bg-primary);
-    color: var(--color-primary);
-  }
+export const badgeStyles = [
+  baseStyles,
+  css`
+    .badge__primary {
+      background-color: var(--bg-primary);
+      color: var(--color-primary);
+    }
 
-  .badge__primary-light {
-    background-color: var(--bg-primary-light);
-    color: var(--color-primary);
-  }
+    .badge__primary-light {
+      background-color: var(--bg-primary-light);
+      color: var(--color-primary);
+    }
 
-  .badge__secondary {
-    background-color: var(bg-secondary);
-    color: var(--color-secondary);
-  }
+    .badge__secondary {
+      background-color: var(bg-secondary);
+      color: var(--color-secondary);
+    }
 
-  .badge {
-    display: inline-block;
-    padding: 0 0.5rem;
-    border-radius: 1rem;
-    font-style: italic;
-    line-height: 1.5rem;
-  }
-`;
+    .badge {
+      display: inline-block;
+      padding: 0 0.5rem;
+      border-radius: 1rem;
+      font-style: italic;
+      line-height: 1.5rem;
+    }
+  `,
+];

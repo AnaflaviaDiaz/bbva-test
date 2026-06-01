@@ -3,15 +3,14 @@ import { customElement, property } from 'lit/decorators.js';
 
 import { VariantColor } from '../models/variant.model.js';
 import { badgeStyles } from './badge.styles.js';
-import { baseStyles } from '../../tokens/base.styles.js';
 
 @customElement('bbva-badge')
 export class Badge extends LitElement {
-  static styles = [baseStyles, badgeStyles];
+  static styles = [badgeStyles];
 
   @property({ type: String }) text: string = '';
 
-  @property({ type: String }) variant: VariantColor = 'secondary';
+  @property({ type: String, reflect: true }) variant: VariantColor = 'secondary';
 
   render() {
     return html`

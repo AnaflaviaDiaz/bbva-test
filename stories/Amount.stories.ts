@@ -43,7 +43,7 @@ interface ArgTypes {
 const Template: Story<ArgTypes> = ({
   amount = 1_200,
   currency,
-  locale,
+  locale = 'en-ES',
   heading = 'xl',
 }: ArgTypes) => html`
   <bbva-amount

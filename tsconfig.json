@@ -4,7 +4,11 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "noEmitOnError": true,
-    "lib": ["es2021", "dom", "DOM.Iterable"],
+    "lib": [
+      "es2021",
+      "dom",
+      "DOM.Iterable"
+    ],
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
@@ -15,7 +19,18 @@
     "rootDir": "./",
     "declaration": true,
     "incremental": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": [
+      "mocha",
+      "node"
+    ]
   },
-  "include": ["**/*.ts"]
+  "include": [
+    "./src/**/*.ts",
+    "./test/**/*.ts"
+  ],
+  "exclude": [
+    "dist",
+    "**/*.stories.ts"
+  ]
 }

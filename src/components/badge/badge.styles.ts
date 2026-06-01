@@ -20,5 +20,6 @@ export const badgeStyles = css`
     display: inline-block;
     padding: 0 8px;
     border-radius: 16px;
+    font-style: italic;
   }
 `;

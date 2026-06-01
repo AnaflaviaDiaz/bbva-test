@@ -1,9 +1,9 @@
 import { expect } from '@open-wc/testing';
-import { currencyFormatter } from './currency-formatter.js';
+import { amountFormatter } from './amount-formatter.js';
 
-describe('currencyFormatter', () => {
+describe('amountFormatter', () => {
   it('should format EUR currency', () => {
-    const result = currencyFormatter({
+    const result = amountFormatter({
       locale: 'es-ES',
       currency: 'EUR',
       amount: 7_885.23,
@@ -13,7 +13,7 @@ describe('currencyFormatter', () => {
   });
 
   it('should format USD currency', () => {
-    const result = currencyFormatter({
+    const result = amountFormatter({
       locale: 'en-US',
       currency: 'USD',
       amount: 7_885.23,

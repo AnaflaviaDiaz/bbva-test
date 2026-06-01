@@ -1,14 +1,14 @@
-interface CurrencyConfig {
+interface AmountConfig {
   locale: Intl.LocalesArgument;
   currency: string;
   amount: number;
 }
 
-export const currencyFormatter = ({
+export const amountFormatter = ({
   locale,
   currency,
   amount,
-}: CurrencyConfig) =>
+}: AmountConfig) =>
   new Intl.NumberFormat(locale, {
     style: 'currency',
     currency,

@@ -1,9 +1,10 @@
 import { css } from 'lit';
+import { baseStyles } from './base.styles.js';
 
-export const typographyStyles = css`
+export const typographyStyles = [baseStyles, css`
   :host {
-    color: #070e46;
-    font-family: Helvetica, Arial, sans-serif;
+    color: var(--color-secondary);
+    font-family: var(--font-family);
   }
 
   .title-5xl,
@@ -43,4 +44,4 @@ export const typographyStyles = css`
   .title-xl-bold {
     font-weight: 700;
   }
-`;
+`];

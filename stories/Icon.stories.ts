@@ -1,8 +1,9 @@
 import { html, TemplateResult } from 'lit';
 
 import '../src/components/icon/index.js';
-import { VariantSize } from '../src/components/models/variant.js';
+import { VariantSize } from '../src/components/models/variant.model.js';
 import { IconName } from '../src/components/icon/list.js';
+import { IconModel } from '../src/components/models/icon.model.js';
 
 export default {
   title: 'Icon',
@@ -34,19 +35,12 @@ interface Story<T> {
   argTypes?: Record<string, unknown>;
 }
 
-interface ArgTypes {
-  color: string;
-  altText: string;
-  size: VariantSize;
-  name: IconName;
-}
-
-const Template: Story<ArgTypes> = ({
-  color,
+const Template: Story<IconModel> = ({
+  color = '#000',
   altText,
-  size,
+  size = 'md',
   name,
-}: ArgTypes) => html`
+}: IconModel) => html`
   <bbva-icon
     .color=${color}
     .alt-text=${altText}

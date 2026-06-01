@@ -1,4 +1,4 @@
-import { html, LitElement, nothing } from 'lit';
+import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import { typographyStyles } from '../../tokens/typography.styles.js';
@@ -25,11 +25,11 @@ export class Amount extends LitElement {
     });
   }
 
-  private get _amountClass(): string | typeof nothing {
-    return this.heading ? `title-${this.heading}` : nothing;
+  private get _amountClass(): string {
+    return this.heading ? `title-${this.heading}` : '';
   }
 
   render() {
-    return html` <p .class=${this._amountClass}>${this._formattedAmount}</p>`;
+    return html` <p class=${this._amountClass}>${this._formattedAmount}</p>`;
   }
 }

@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit';
+import { html, LitElement, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import { typographyStyles } from '../../tokens/typography.styles.js';
@@ -15,7 +15,7 @@ export class Amount extends LitElement {
 
   @property({ type: String }) locale = navigator.language;
 
-  @property({ type: String }) heading?: VariantHeading = 'xl';
+  @property({ type: String }) heading?: VariantHeading;
 
   private get _formattedAmount(): string {
     return amountFormatter({
@@ -25,9 +25,11 @@ export class Amount extends LitElement {
     });
   }
 
+  private get _amountClass(): string | typeof nothing {
+    return this.heading ? `title-${this.heading}` : nothing;
+  }
+
   render() {
-    return html` <p class=${`title-${this.heading}`}>
-      ${this._formattedAmount}
-    </p>`;
+    return html` <p .class=${this._amountClass}>${this._formattedAmount}</p>`;
   }
 }

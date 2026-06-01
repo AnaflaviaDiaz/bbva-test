@@ -10,7 +10,8 @@ export class Badge extends LitElement {
 
   @property({ type: String }) text: string = '';
 
-  @property({ type: String, reflect: true }) variant: VariantColor = 'secondary';
+  @property({ type: String, reflect: true }) variant: VariantColor =
+    'secondary';
 
   render() {
     return html`

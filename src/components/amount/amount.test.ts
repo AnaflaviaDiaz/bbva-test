@@ -53,9 +53,9 @@ describe('Amount', () => {
   });
 
   it('updates when amount changes', async () => {
-    const el = await fixture(html`
+    const el = (await fixture(html`
       <bbva-amount amount="100" currency="EUR" locale="es-ES"></bbva-amount>
-    `) as any;
+    `)) as any;
 
     let p = el.shadowRoot?.querySelector('p');
     expect(p?.textContent).to.equal('100,00\u00A0€');

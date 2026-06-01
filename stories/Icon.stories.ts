@@ -51,8 +51,8 @@ const Template: Story<IconModel> = ({
 
 export const Default = Template.bind({});
 Default.args = {
-  color : '#000',
+  color: '#000',
   altText: 'texto alternativo',
   size: 'md',
-  name: 'card'
+  name: 'card',
 };

@@ -12,7 +12,7 @@ const amount = {
   amount: 9_999.99,
   heading: 'xl' as VariantHeading,
   currency: 'EUR',
-  locale: 'de-DE'
+  locale: 'de-DE',
 };
 
 @customElement('bbva-card-account')

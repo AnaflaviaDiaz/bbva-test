@@ -1,5 +1,5 @@
-import { expect } from "@open-wc/testing";
-import { dateFormatter } from "./date-formatter.js";
+import { expect } from '@open-wc/testing';
+import { dateFormatter } from './date-formatter.js';
 
 describe('dateFormatter', () => {
   it('should format date when month is lower than 10', () => {

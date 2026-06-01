@@ -4,11 +4,7 @@ interface AmountConfig {
   amount: number;
 }
 
-export const amountFormatter = ({
-  locale,
-  currency,
-  amount,
-}: AmountConfig) =>
+export const amountFormatter = ({ locale, currency, amount }: AmountConfig) =>
   new Intl.NumberFormat(locale, {
     style: 'currency',
     currency,

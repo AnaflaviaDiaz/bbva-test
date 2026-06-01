@@ -48,7 +48,7 @@ const iconCategory: IconModel = {
   name: 'car',
   color: '#6f6f',
   size: 'md',
-  altText: 'text-alternativo'
+  altText: 'text-alternativo',
 };
 export const WithIcon = Template.bind({});
 WithIcon.args = {

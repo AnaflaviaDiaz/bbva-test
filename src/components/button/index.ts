@@ -1,12 +1,11 @@
 import { LitElement, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { VariantColor } from '../models/variant.model.js';
-import { baseStyles } from '../../tokens/base.styles.js';
 import { buttonStyles } from './button.styles.js';
 
 @customElement('bbva-button')
 export class Button extends LitElement {
-  static styles = [baseStyles, buttonStyles];
+  static styles = [buttonStyles];
 
   @property({ type: String, attribute: 'title' }) titleButton = '';
 

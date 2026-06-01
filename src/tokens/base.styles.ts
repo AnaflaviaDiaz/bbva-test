@@ -27,8 +27,5 @@ export const baseStyles = css`
 
     --btn-border-radius: 8px;
     --btn-padding: 16px 32px;
-
-    /* typography */
-    /* --title-3xl:  */
   }
 `;

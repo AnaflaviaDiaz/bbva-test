@@ -37,10 +37,7 @@ const Template: Story<ArgTypes> = ({
   text = 'Hello world',
   variant = 'primary',
 }: ArgTypes) => html`
-  <bbva-badge
-    .text=${text}
-    .variant=${variant}
-  ></bbva-badge>
+  <bbva-badge .text=${text} .variant=${variant}></bbva-badge>
 `;
 
 export const Default = Template.bind({});

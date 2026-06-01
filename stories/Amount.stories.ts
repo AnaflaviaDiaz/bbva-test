@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit';
 
 import '../src/components/amount/index.js';
-import { VariantHeading } from '../src/components/models/variant.js';
+import { VariantHeading } from '../src/components/models/variant.model.js';
 
 export default {
   title: 'Amount',

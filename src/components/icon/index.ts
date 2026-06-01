@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { icons, IconName } from './list.js';
-import { VariantSize } from '../models/variant.js';
+import { VariantSize } from '../models/variant.model.js';
 import { iconStyles } from './icon.styles.js';
 
 @customElement('bbva-icon')
@@ -12,7 +12,7 @@ export class Icon extends LitElement {
 
   @property({ type: String }) size: VariantSize = 'md';
 
-  @property({ attribute: 'alt-text' }) altText = '';
+  @property({ attribute: 'alt-text' }) altText: string = '';
 
   static styles = [iconStyles];
 

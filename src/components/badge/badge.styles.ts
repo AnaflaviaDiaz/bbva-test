@@ -18,8 +18,9 @@ export const badgeStyles = css`
 
   .badge {
     display: inline-block;
-    padding: 0 8px;
-    border-radius: 16px;
+    padding: 0 0.5rem;
+    border-radius: 1rem;
     font-style: italic;
+    line-height: 1.5rem;
   }
 `;

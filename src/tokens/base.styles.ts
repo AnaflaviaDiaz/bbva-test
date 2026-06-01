@@ -25,7 +25,10 @@ export const baseStyles = css`
     --btn-bg-disabled: #e2e6ea;
     --btn-color-disabled: #adb8c2;
 
-    --btn-border-radius: 8px;
-    --btn-padding: 16px 32px;
+    --btn-border-radius: 0.5rem;
+    --btn-padding: 1rem 2rem;
+
+    /* font-family */
+    --font-family: Helvetica, Arial, sans-serif;
   }
 `;

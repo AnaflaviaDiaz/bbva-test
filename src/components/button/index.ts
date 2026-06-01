@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { Variant } from '../models/variant.js';
+import { VariantColor } from '../models/variant.js';
 import { baseStyles } from '../../tokens/base.styles.js';
 import { buttonStyles } from './button.styles.js';
 
@@ -10,7 +10,7 @@ export class Button extends LitElement {
 
   @property({ type: String, attribute: 'title' }) titleButton = '';
 
-  @property({ type: String, reflect: true }) variant: Variant = 'primary';
+  @property({ type: String, reflect: true }) variant: VariantColor = 'primary';
 
   @property({ type: Boolean }) disabled: boolean = false;
 

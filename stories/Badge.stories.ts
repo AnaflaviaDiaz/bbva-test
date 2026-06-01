@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit';
 
 import '../src/components/badge/index.js';
-import { Variant } from '../src/components/models/variant.js';
+import { VariantColor } from '../src/components/models/variant.js';
 
 export default {
   title: 'Badge',
@@ -10,7 +10,7 @@ export default {
     text: { control: 'text' },
     variant: {
       control: { type: 'select' },
-      options: ['primary', 'secondary', 'primary-light'],
+      options: ['primary', 'secondary', 'primary-light'] as VariantColor[],
     },
   },
   parameters: {
@@ -30,7 +30,7 @@ interface Story<T> {
 
 interface ArgTypes {
   text: string;
-  variant?: Variant;
+  variant?: VariantColor;
 }
 
 const Template: Story<ArgTypes> = ({

@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit';
 
 import '../src/components/button/index.js';
-import { Variant } from '../src/components/models/variant.js';
+import { VariantColor } from '../src/components/models/variant.js';
 
 export default {
   title: 'Button',
@@ -12,7 +12,7 @@ export default {
     disabled: { control: 'boolean' },
     variant: {
       control: { type: 'select' },
-      options: ['primary', 'secondary', 'primary-light'],
+      options: ['primary', 'secondary', 'primary-light'] as VariantColor[],
     },
   },
   parameters: {
@@ -34,7 +34,7 @@ interface ArgTypes {
   title: string;
   type?: 'button' | 'submit';
   disabled?: boolean;
-  variant?: Variant;
+  variant?: VariantColor;
 }
 
 const Template: Story<ArgTypes> = ({

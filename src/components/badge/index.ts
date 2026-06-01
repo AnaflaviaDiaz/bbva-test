@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-import { Variant } from '../models/variant.js';
+import { VariantColor } from '../models/variant.js';
 import { badgeStyles } from './badge.styles.js';
 import { baseStyles } from '../../tokens/base.styles.js';
 
@@ -11,7 +11,7 @@ export class Badge extends LitElement {
 
   @property({ type: String }) text: string = '';
 
-  @property({ type: String }) variant: Variant = 'secondary';
+  @property({ type: String }) variant: VariantColor = 'secondary';
 
   render() {
     return html`

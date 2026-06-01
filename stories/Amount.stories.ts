@@ -1,6 +1,7 @@
 import { html, TemplateResult } from 'lit';
 
 import '../src/components/amount/index.js';
+import { VariantHeading } from '../src/components/models/variant.js';
 
 export default {
   title: 'Amount',
@@ -9,7 +10,7 @@ export default {
     amount: { control: 'text' },
     heading: {
       control: { type: 'select' },
-      options: ['xl', '2xl', '3xl', '4xl', '5xl'],
+      options: ['xl', '2xl', '3xl', '4xl', '5xl'] as VariantHeading[],
     },
   },
   parameters: {
@@ -29,7 +30,7 @@ interface Story<T> {
 
 interface ArgTypes {
   amount: string;
-  heading?: 'xl' | '2xl' | '3xl' | '4xl' | '5xl';
+  heading?: VariantHeading;
 }
 
 const Template: Story<ArgTypes> = ({

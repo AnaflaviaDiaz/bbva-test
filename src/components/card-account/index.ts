@@ -45,7 +45,6 @@ export class CardAccount extends LitElement {
           <bbva-amount
             .amount=${amount.amount}
             .currency=${amount.currency}
-            .heading=${amount.heading}
             .locale=${amount.locale}
           ></bbva-amount>
         </header>

@@ -36,6 +36,7 @@ export const buttonStyles = [
       padding: var(--btn-padding);
       border: none;
       cursor: pointer;
+      width: var(--btn-width);
 
       &:disabled {
         cursor: default;

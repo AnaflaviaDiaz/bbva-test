@@ -1,4 +1,4 @@
-export interface AmountConfig {
+interface AmountConfig {
   amount: number;
   currency: string;
   locale?: Intl.LocalesArgument;

@@ -28,6 +28,8 @@ export const baseStyles = css`
     --btn-border-radius: 0.5rem;
     --btn-padding: 1rem 2rem;
 
+    --btn-width: auto;
+
     /* font-family */
     --font-family: Helvetica, Arial, sans-serif;
   }

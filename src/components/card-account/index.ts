@@ -10,6 +10,12 @@ export class CardAccount extends LitElement {
   static styles = [
     baseStyles,
     css`
+      :host {
+        bbva-button {
+          --btn-width: 100%;
+        }
+      }
+
       .card {
         position: relative;
         background-position: center;
@@ -28,12 +34,33 @@ export class CardAccount extends LitElement {
         left: 0;
         right: 0;
       }
+
+      .card-footer {
+        display: flex;
+        gap: 0.5rem;
+        padding: 0.5rem;
+
+        bbva-button {
+          flex: 1;
+        }
+      }
     `,
   ];
 
   @property({ attribute: false }) date = '';
 
   @property({ type: Object }) amount?: AmountModel;
+
+  @property({ type: Boolean, attribute: 'has-action-buttons' })
+  hasActionButtons = false;
+
+  @property({ type: String }) primaryButtonText?: string;
+
+  @property({ attribute: false }) handlePrimaryButton?: () => void;
+
+  @property({ type: String }) secondaryButtonText?: string;
+
+  @property({ attribute: false }) handleSecondaryButton?: () => void;
 
   private get _amountTemplate(): TemplateResult | typeof nothing {
     return this.amount
@@ -42,6 +69,35 @@ export class CardAccount extends LitElement {
           .currency=${this.amount.currency}
           .locale=${this.amount.locale as string}
         ></bbva-amount>`
+      : nothing;
+  }
+
+  private get _primaryButtonTemplate(): TemplateResult | typeof nothing {
+    return this.handlePrimaryButton && this.primaryButtonText
+      ? html`<bbva-button
+          title=${this.primaryButtonText}
+          @button-click=${this.handlePrimaryButton}
+        ></bbva-button>`
+      : nothing;
+  }
+
+  private get _secondaryButtonTemplate(): TemplateResult | typeof nothing {
+    return this.handleSecondaryButton && this.secondaryButtonText
+      ? html`<bbva-button
+          title=${this.secondaryButtonText}
+          variant="secondary"
+          @button-click=${this.handleSecondaryButton}
+        ></bbva-button>`
+      : nothing;
+  }
+
+  private get _actionButtonsTemplate(): TemplateResult | typeof nothing {
+    return this.hasActionButtons
+      ? html`
+          <footer class="card-footer">
+            ${this._primaryButtonTemplate} ${this._secondaryButtonTemplate}
+          </footer>
+        `
       : nothing;
   }
 
@@ -55,7 +111,8 @@ export class CardAccount extends LitElement {
 
         <div class="card-content"></div>
 
-        <footer class="card-footer"></footer>
+        <!-- footer -->
+        ${this._actionButtonsTemplate}
       </article>
     `;
   }

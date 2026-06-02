@@ -2,7 +2,7 @@ import { LitElement, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import { icons, IconName } from './list.js';
-import { VariantSize } from '../models/variant.model.js';
+import { VariantSize } from '../models/index.js';
 import { iconStyles } from './icon.styles.js';
 
 @customElement('bbva-icon')

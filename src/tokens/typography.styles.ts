@@ -1,4 +1,5 @@
 import { css } from 'lit';
+
 import { baseStyles } from './base.styles.js';
 
 export const typographyStyles = [
@@ -45,6 +46,11 @@ export const typographyStyles = [
     .title-2xl-bold,
     .title-xl-bold {
       font-weight: 700;
+    }
+
+    p, h1, h2, h3, h4, h5, h6 {
+      margin-block-start: 0.5rem;
+      margin-block-end: 0.5rem;
     }
   `,
 ];

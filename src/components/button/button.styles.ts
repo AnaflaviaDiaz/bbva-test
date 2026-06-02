@@ -1,5 +1,6 @@
 import { css } from 'lit';
-import { baseStyles } from '../../tokens/base.styles.js';
+
+import { baseStyles } from '../../tokens/index.js';
 
 export const buttonStyles = [
   baseStyles,

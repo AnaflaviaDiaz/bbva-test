@@ -1,12 +1,17 @@
 import { css } from 'lit';
 
-export const categoryStyles = css`
-  .category {
-    display: flex;
-    align-items: center;
-  }
+import { typographyStyles } from '../../tokens/index.js';
 
-  bbva-icon {
-    margin-right: 0.5rem;
-  }
-`;
+export const categoryStyles = [
+  typographyStyles,
+  css`
+    .category {
+      display: flex;
+      align-items: center;
+    }
+
+    bbva-icon {
+      margin-right: 0.5rem;
+    }
+  `,
+];

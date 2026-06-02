@@ -1,8 +1,10 @@
 import { css } from 'lit';
-import { baseStyles } from '../../tokens/base.styles.js';
+
+import { baseStyles, typographyStyles } from '../../tokens/index.js';
 
 export const badgeStyles = [
   baseStyles,
+  typographyStyles,
   css`
     .badge__primary {
       background-color: var(--bg-primary);

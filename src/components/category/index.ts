@@ -2,7 +2,7 @@ import { html, LitElement, nothing, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import '../icon/index.js';
-import { IconModel } from '../models/icon.model.js';
+import { IconModel } from '../models/index.js';
 import { categoryStyles } from './category.styles.js';
 
 @customElement('bbva-category')

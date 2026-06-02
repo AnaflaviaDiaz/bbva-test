@@ -16,7 +16,7 @@ export default {
     },
     name: {
       control: { type: 'select' },
-      options: ['car', 'card', 'paper'] as IconName[],
+      options: ['car', 'card', 'paper', 'account'] as IconName[],
     },
   },
   parameters: {

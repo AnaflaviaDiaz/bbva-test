@@ -23,7 +23,6 @@ describe('Category', () => {
     const icon: IconModel = {
       name: 'card',
       color: 'red',
-      altText: 'Card Icon',
       size: 'lg',
     };
     const element = await fixture(
@@ -36,14 +35,12 @@ describe('Category', () => {
     const bbvaIcon = element.shadowRoot?.querySelector('bbva-icon') as Element & {
       name: string;
       color: string;
-      altText: string;
       size: string;
     };
     // eslint-disable-next-line no-unused-expressions
     expect(bbvaIcon).to.exist;
     expect((bbvaIcon).name).to.equal('card');
     expect((bbvaIcon).color).to.equal('red');
-    expect((bbvaIcon).altText).to.equal('Card Icon');
     expect((bbvaIcon).size).to.equal('lg');
   });
 
@@ -51,7 +48,6 @@ describe('Category', () => {
     const icon: IconModel = {
       name: 'card',
       color: 'red',
-      altText: 'Card Icon',
     };
     const element = await fixture(
       html`<bbva-category category-name="Card Test" .icon=${icon}></bbva-category>`,
@@ -65,14 +61,12 @@ describe('Category', () => {
     ) as Element & {
       name: string;
       color: string;
-      altText: string;
       size: string;
     };
     // eslint-disable-next-line no-unused-expressions
     expect(bbvaIcon).to.exist;
     expect(bbvaIcon.name).to.equal('card');
     expect(bbvaIcon.color).to.equal('red');
-    expect(bbvaIcon.altText).to.equal('Card Icon');
     expect(bbvaIcon.size).to.equal('md');
   });
 });

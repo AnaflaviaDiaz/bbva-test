@@ -18,7 +18,6 @@ export class Category extends LitElement {
 
     return html`<bbva-icon
       .color=${this.icon.color ?? 'currentColor'}
-      .altText=${this.icon.altText ?? ''}
       .size=${this.icon.size ?? 'md'}
       .name=${this.icon.name}
     ></bbva-icon>`;

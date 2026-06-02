@@ -3,7 +3,6 @@ import { VariantSize } from './variant.model.js';
 
 export interface IconModel {
   name: IconName;
-  altText?: string;
   color?: string;
   size?: VariantSize;
 }

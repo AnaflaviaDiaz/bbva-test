@@ -10,7 +10,6 @@ export default {
   component: 'bbva-icon',
   argTypes: {
     color: { control: 'color' },
-    altText: { control: 'text' },
     size: {
       control: { type: 'select' },
       options: ['sm', 'md', 'lg', 'xl'] as VariantSize[],
@@ -23,7 +22,10 @@ export default {
   parameters: {
     a11y: {
       config: {
-        rules: [{ id: 'color-contrast', enabled: true }],
+        rules: [
+          { id: 'color-contrast', enabled: true },
+          { id: 'image-alt', enabled: true },
+        ],
       },
     },
   },
@@ -37,22 +39,15 @@ interface Story<T> {
 
 const Template: Story<IconModel> = ({
   color = '#000',
-  altText,
   size = 'md',
   name,
 }: IconModel) => html`
-  <bbva-icon
-    .color=${color}
-    .alt-text=${altText}
-    .size=${size}
-    .name=${name}
-  ></bbva-icon>
+  <bbva-icon .color=${color} .size=${size} .name=${name}></bbva-icon>
 `;
 
 export const Default = Template.bind({});
 Default.args = {
   color: '#000',
-  altText: 'texto alternativo',
   size: 'md',
   name: 'card',
 };

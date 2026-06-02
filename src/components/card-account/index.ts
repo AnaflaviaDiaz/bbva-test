@@ -39,9 +39,16 @@ export class CardAccount extends LitElement {
         display: flex;
         gap: 0.5rem;
         padding: 0.5rem;
+        flex-direction: column;
 
         bbva-button {
           flex: 1;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .card-footer {
+          flex-direction: row;
         }
       }
     `,

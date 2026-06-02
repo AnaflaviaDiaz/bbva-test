@@ -48,9 +48,41 @@ export const typographyStyles = [
       font-weight: 700;
     }
 
-    p, h1, h2, h3, h4, h5, h6 {
-      margin-block-start: 0.5rem;
-      margin-block-end: 0.5rem;
+    ul {
+      list-style: none;
+      padding-inline: 0;
+    }
+
+    li {
+      list-style: none;
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5em;
+      transform: translateY(-50%);
+
+      width: 6px;
+      height: 3.5px;
+
+      background-color: currentColor;
+      border-radius: 0.5rem;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-block-start: 0rem;
+      margin-block-end: 0rem;
     }
   `,
 ];

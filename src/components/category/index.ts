@@ -1,6 +1,7 @@
 import { html, LitElement, nothing, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
+import '../icon/index.js';
 import { IconModel } from '../models/icon.model.js';
 import { categoryStyles } from './category.styles.js';
 
@@ -8,8 +9,7 @@ import { categoryStyles } from './category.styles.js';
 export class Category extends LitElement {
   static styles = [categoryStyles];
 
-  @property({ type: String, attribute: 'category-name' }) categoryName: string =
-    '';
+  @property({ type: String, attribute: 'category-name' }) categoryName = '';
 
   @property({ type: Object }) icon?: IconModel;
 
@@ -17,8 +17,7 @@ export class Category extends LitElement {
     if (!this.icon) return nothing;
 
     return html`<bbva-icon
-      .color=${this.icon.color ?? ''}
-      .altText=${this.icon.altText ?? ''}
+      .color=${this.icon.color ?? 'currentColor'}
       .size=${this.icon.size ?? 'md'}
       .name=${this.icon.name}
     ></bbva-icon>`;

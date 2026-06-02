@@ -11,9 +11,19 @@ export class Button extends LitElement {
 
   @property({ type: String, reflect: true }) variant: VariantColor = 'primary';
 
-  @property({ type: Boolean }) disabled: boolean = false;
+  @property({ type: Boolean }) disabled = false;
 
   @property({ type: String }) type: 'button' | 'submit' = 'button';
+
+  private _handleClick() {
+    this.dispatchEvent(
+      new CustomEvent('button-click', {
+        detail: { title: this.titleButton, type: this.type },
+        bubbles: true,
+        composed: true,
+      }),
+    );
+  }
 
   render() {
     return html`
@@ -21,6 +31,7 @@ export class Button extends LitElement {
         type=${this.type}
         aria-label=${this.titleButton}
         ?disabled=${this.disabled}
+        @click="${this._handleClick}"
       >
         ${this.titleButton}
       </button>

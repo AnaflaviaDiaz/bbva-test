@@ -1,5 +1,5 @@
 import { expect, fixture } from '@open-wc/testing';
-import { html } from 'lit';
+import { html, LitElement } from 'lit';
 
 import './index.js';
 
@@ -52,19 +52,19 @@ describe('Amount', () => {
     await expect(element).to.be.accessible();
   });
 
-  it('updates when amount changes', async () => {
-    const el = (await fixture(html`
+  it('should updates when amount changes', async () => {
+    const element = (await fixture(html`
       <bbva-amount amount="100" currency="EUR" locale="es-ES"></bbva-amount>
-    `)) as any;
+    `)) as LitElement & { amount: number };
 
-    let p = el.shadowRoot?.querySelector('p');
+    let p = element.shadowRoot?.querySelector('p');
     expect(p?.textContent).to.equal('100,00\u00A0€');
 
-    el.amount = 250;
+    element.amount = 250;
 
-    await el.updateComplete;
+    await element.updateComplete;
 
-    p = el.shadowRoot?.querySelector('p');
+    p = element.shadowRoot?.querySelector('p');
     expect(p?.textContent).to.equal('250,00\u00A0€');
   });
 });

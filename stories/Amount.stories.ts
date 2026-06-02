@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit';
 
 import '../src/components/amount/index.js';
-import { VariantHeading } from '../src/components/models/variant.model.js';
+import { AmountModel, VariantHeading } from '../src/components/models/index.js';
 
 export default {
   title: 'Amount',
@@ -33,19 +33,12 @@ interface Story<T> {
   argTypes?: Record<string, unknown>;
 }
 
-interface ArgTypes {
-  amount: number;
-  heading?: VariantHeading;
-  currency: string;
-  locale?: string;
-}
-
-const Template: Story<ArgTypes> = ({
+const Template: Story<AmountModel> = ({
   amount = 1_200,
   currency,
   locale = 'en-ES',
   heading = 'xl',
-}: ArgTypes) => html`
+}: AmountModel) => html`
   <bbva-amount
     .locale=${locale}
     .currency=${currency}

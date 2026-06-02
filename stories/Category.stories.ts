@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit';
 
 import '../src/components/category/index.js';
-import { IconModel } from '../src/components/models/icon.model.js';
+import { CategoryModel, IconModel } from '../src/components/models/index.js';
 
 export default {
   title: 'Category',
@@ -27,15 +27,10 @@ interface Story<T> {
   argTypes?: Record<string, unknown>;
 }
 
-interface ArgTypes {
-  categoryName: string;
-  icon?: IconModel;
-}
-
-const Template: Story<ArgTypes> = ({
+const Template: Story<CategoryModel> = ({
   categoryName = 'Category',
   icon,
-}: ArgTypes) => html`
+}: CategoryModel) => html`
   <bbva-category category-name=${categoryName} .icon=${icon}></bbva-category>
 `;
 

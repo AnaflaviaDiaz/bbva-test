@@ -1,9 +1,8 @@
 import { html, TemplateResult } from 'lit';
 
 import '../src/components/icon/index.js';
-import { VariantSize } from '../src/components/models/variant.model.js';
+import { IconModel, VariantSize } from '../src/components/models/index.js';
 import { IconName } from '../src/components/icon/list.js';
-import { IconModel } from '../src/components/models/icon.model.js';
 
 export default {
   title: 'Icon',

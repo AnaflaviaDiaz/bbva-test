@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit';
 
 import '../src/components/badge/index.js';
-import { VariantColor } from '../src/components/models/variant.model.js';
+import { BadgeModel, VariantColor } from '../src/components/models/index.js';
 
 export default {
   title: 'Badge',
@@ -28,15 +28,10 @@ interface Story<T> {
   argTypes?: Record<string, unknown>;
 }
 
-interface ArgTypes {
-  text: string;
-  variant?: VariantColor;
-}
-
-const Template: Story<ArgTypes> = ({
+const Template: Story<BadgeModel> = ({
   text = 'Hello world',
   variant = 'primary',
-}: ArgTypes) => html`
+}: BadgeModel) => html`
   <bbva-badge .text=${text} .variant=${variant}></bbva-badge>
 `;
 

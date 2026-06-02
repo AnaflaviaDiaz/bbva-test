@@ -1,10 +1,10 @@
-interface AmountConfig {
-  locale: Intl.LocalesArgument;
-  currency: string;
+export interface AmountConfig {
   amount: number;
+  currency: string;
+  locale?: Intl.LocalesArgument;
 }
 
-export const amountFormatter = ({ locale, currency, amount }: AmountConfig) =>
+export const amountFormatter = ({ locale = 'de-DE', currency, amount }: AmountConfig) =>
   new Intl.NumberFormat(locale, {
     style: 'currency',
     currency,

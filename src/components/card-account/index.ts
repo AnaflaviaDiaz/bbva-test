@@ -1,19 +1,9 @@
-import { css, html, LitElement } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { css, html, LitElement, nothing, TemplateResult } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
 
 import { baseStyles } from '../../tokens/base.styles.js';
-import { dateFormatter } from '../../utils/date-formatter.js';
-import { VariantHeading } from '../models/variant.model.js';
+import { AmountModel } from '../models/amount.model.js';
 import '../amount/index.js';
-
-const currentDay = dateFormatter(new Date());
-
-const amount = {
-  amount: 9_999.99,
-  heading: 'xl' as VariantHeading,
-  currency: 'EUR',
-  locale: 'de-DE',
-};
 
 @customElement('bbva-card-account')
 export class CardAccount extends LitElement {
@@ -33,20 +23,34 @@ export class CardAccount extends LitElement {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
       }
     `,
   ];
+
+  @property({ attribute: false }) date = '';
+
+  @property({ type: Object }) amount?: AmountModel;
+
+  private get _amountTemplate(): TemplateResult | typeof nothing {
+    return this.amount
+      ? html`<bbva-amount
+          .amount=${this.amount.amount}
+          .currency=${this.amount.currency}
+          .locale=${this.amount.locale as string}
+        ></bbva-amount>`
+      : nothing;
+  }
 
   render() {
     return html`
       <article class="card">
         <header class="card-header">
-          <p>${currentDay}</p>
-          <bbva-amount
-            .amount=${amount.amount}
-            .currency=${amount.currency}
-            .locale=${amount.locale}
-          ></bbva-amount>
+          <p>${this.date}</p>
+          ${this._amountTemplate}
         </header>
 
         <div class="card-content"></div>

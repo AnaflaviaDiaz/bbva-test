@@ -35,7 +35,7 @@ export class BbvaCard extends LitElement {
   static styles = [typographyStyles];
 
   descriptionTemplate: TemplateResult | undefined = html`
-    <p>Hola que tal</p>
+    <p>Description</p>
     <ul>
       <li>Hola</li>
       <li>Hola</li>

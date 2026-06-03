@@ -17,6 +17,7 @@ export interface CardAccountModel {
   cardCategory: CategoryModel;
   marketGain?: MarketGain;
   amount?: AmountModel;
+  imageTemplate?: TemplateResult;
   descriptionTemplate?: TemplateResult;
   hasActionButtons?: boolean;
   primaryButtonText?: string;

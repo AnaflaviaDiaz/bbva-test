@@ -1,4 +1,4 @@
-// TODO: test, storybook, docs, accessibilidad
+// TODO: accessibilidad, docs
 
 import { html, LitElement, nothing, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
@@ -12,6 +12,11 @@ import {
 } from '../models/index.js';
 import { cardAccountStyles } from './card-account.styles.js';
 import { dateFormatter } from '../../utils/index.js';
+import '../amount/index.js';
+import '../badge/index.js';
+import '../button/index.js';
+import '../category/index.js';
+import '../icon/index.js';
 
 @customElement('bbva-card-account')
 export class CardAccount extends LitElement {
@@ -87,7 +92,7 @@ export class CardAccount extends LitElement {
   }
 
   private get _primaryButtonTemplate(): TemplateResult | typeof nothing {
-    return this.handlePrimaryButton && this.primaryButtonText
+    return this.primaryButtonText
       ? html`<bbva-button
           title=${this.primaryButtonText}
           @button-click=${this.handlePrimaryButton}
@@ -96,7 +101,7 @@ export class CardAccount extends LitElement {
   }
 
   private get _secondaryButtonTemplate(): TemplateResult | typeof nothing {
-    return this.handleSecondaryButton && this.secondaryButtonText
+    return this.secondaryButtonText
       ? html`<bbva-button
           title=${this.secondaryButtonText}
           variant="secondary"
@@ -151,7 +156,6 @@ export class CardAccount extends LitElement {
   render() {
     return html`
       <article class="card">
-        <!-- TODO: agregar trend component -->
         <header class="card-header">
           <time datetime="${this.date}">${dateFormatter(this.date)}</time>
           <div class="card-header__amount">

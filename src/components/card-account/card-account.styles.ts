@@ -80,8 +80,8 @@ export const cardAccountStyles = [
       }
 
       .card-content__image {
-        width: 20rem;
-        height: 20rem;
+        width: 16rem;
+        height: 16rem;
       }
     }
   `,

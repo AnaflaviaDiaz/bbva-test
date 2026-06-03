@@ -10,8 +10,9 @@ export interface MarketGain {
 }
 
 export interface CardAccountModel {
+  id: string;
   date: string;
-  title: string;
+  titleCard: string;
   badgeStatus: BadgeModel;
   accountCategory: CategoryModel;
   cardCategory: CategoryModel;

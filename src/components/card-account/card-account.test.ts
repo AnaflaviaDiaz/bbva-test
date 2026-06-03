@@ -28,8 +28,9 @@ const imgTemplate: TemplateResult = html`<img
 />`;
 
 const cardAccountData: CardAccountModel = {
+  id: 'card-account',
   date: '2026-06-05',
-  title: 'Titulo',
+  titleCard: 'Titulo',
   amount: {
     amount: 9_999.99,
     heading: 'xl',
@@ -62,8 +63,9 @@ describe('CardACcount', () => {
   it('should render with custom values', async () => {
     const element = (await fixture(
       html`<bbva-card-account
+        .idCard=${cardAccountData.id}
         .date=${cardAccountData.date}
-        .title=${cardAccountData.title}
+        .titleCard=${cardAccountData.titleCard}
         .amount=${cardAccountData.amount}
         .accountCategory=${cardAccountData.accountCategory}
         .cardCategory=${cardAccountData.cardCategory}
@@ -107,6 +109,7 @@ describe('CardACcount', () => {
     it('should render header with date, formatted amount and currency', async () => {
       const element = (await fixture(
         html`<bbva-card-account
+          .idCard=${cardAccountData.id}
           .date=${'2026-06-05'}
           .amount=${{
             amount: 7885.23,
@@ -141,6 +144,7 @@ describe('CardACcount', () => {
     it('should render header with date, formatted amount, currency and markedGain', async () => {
       const element = (await fixture(
         html`<bbva-card-account
+          .idCard=${cardAccountData.id}
           .date=${cardAccountData.date}
           .markerGain=${cardAccountData.marketGain}
           .amount=${cardAccountData.amount}
@@ -174,6 +178,7 @@ describe('CardACcount', () => {
     it('should render with badgeStatus, account and card Categories', async () => {
       const element = (await fixture(
         html`<bbva-card-account
+          .idCard=${cardAccountData.id}
           .amount=${cardAccountData.amount}
           .accountCategory=${cardAccountData.accountCategory}
           .cardCategory=${cardAccountData.cardCategory}
@@ -204,7 +209,10 @@ describe('CardACcount', () => {
 
     it('should render with Image', async () => {
       const element = (await fixture(
-        html`<bbva-card-account .imageTemplate=${cardAccountData.imageTemplate}>
+        html`<bbva-card-account
+          .idCard=${cardAccountData.id}
+          .imageTemplate=${cardAccountData.imageTemplate}
+        >
         </bbva-card-account> `,
       )) as any;
       await element.updateComplete;
@@ -220,7 +228,9 @@ describe('CardACcount', () => {
 
     it('should render with Description template', async () => {
       const element = (await fixture(
-        html`<bbva-card-account>${descriptionTemplate}</bbva-card-account>`,
+        html`<bbva-card-account .idCard=${cardAccountData.id}
+          >${descriptionTemplate}</bbva-card-account
+        >`,
       )) as any;
 
       await element.updateComplete;
@@ -244,6 +254,7 @@ describe('CardACcount', () => {
     it('should render footer with primary button', async () => {
       const element = (await fixture(
         html`<bbva-card-account
+          .idCard=${cardAccountData.id}
           .primaryButtonText=${cardAccountData.primaryButtonText}
           .handlePrimaryButton=${cardAccountData.handlePrimaryButton}
         ></bbva-card-account>`,
@@ -267,6 +278,7 @@ describe('CardACcount', () => {
 
       const element = (await fixture(
         html`<bbva-card-account
+          .idCard=${cardAccountData.id}
           .primaryButtonText=${'Primary Button'}
           .handlePrimaryButton=${() => {
             clickLog.push('primary');

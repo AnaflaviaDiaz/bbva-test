@@ -10,8 +10,9 @@ import { CardAccountModel } from './components/models/index.js';
 import { typographyStyles } from './tokens/index.js';
 
 const cardAccountData: CardAccountModel = {
+  id: 'card-account',
   date: '2026-06-05',
-  title: 'Titulo',
+  titleCard: 'Titulo',
   amount: {
     amount: 9_999.99,
     heading: 'xl',
@@ -67,8 +68,9 @@ export class BbvaCard extends LitElement {
 
   render() {
     return html`<bbva-card-account
+      .idCard=${cardAccountData.id}
       .date=${cardAccountData.date}
-      .title=${cardAccountData.title}
+      .titleCard=${cardAccountData.titleCard}
       .amount=${cardAccountData.amount}
       .accountCategory=${cardAccountData.accountCategory}
       .cardCategory=${cardAccountData.cardCategory}

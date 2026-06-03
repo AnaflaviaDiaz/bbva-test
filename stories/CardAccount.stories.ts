@@ -8,7 +8,7 @@ export default {
   component: 'bbva-card-account',
   argTypes: {
     date: { control: 'date' },
-    title: { control: 'text' },
+    titleCard: { control: 'text' },
     amount: { control: 'object' },
     marketGain: { control: 'object' },
     badgeStatus: { control: 'object' },
@@ -20,7 +20,15 @@ export default {
   parameters: {
     a11y: {
       config: {
-        rules: [{ id: 'color-contrast', enabled: true }],
+        rules: [
+          { id: 'color-contrast', enabled: true },
+          { id: 'role-img-alt', enabled: true },
+          { id: 'aria-valid-attr', enabled: true },
+          { id: 'aria-valid-attr-value', enabled: true },
+          { id: 'aria-allowed-attr', enabled: true },
+          { id: 'aria-roles', enabled: true },
+          { id: 'region', enabled: true },
+        ],
       },
     },
   },
@@ -33,8 +41,9 @@ interface Story<T> {
 }
 
 const Template: Story<CardAccountModel> = ({
+  id,
   amount,
-  title,
+  titleCard,
   date,
   imageTemplate,
   marketGain,
@@ -46,8 +55,9 @@ const Template: Story<CardAccountModel> = ({
   descriptionTemplate,
 }: CardAccountModel) => html`
   <bbva-card-account
+    .idCard=${id}
     .date=${date}
-    .title=${title}
+    .titleCard=${titleCard}
     .amount=${amount}
     .accountCategory=${accountCategory}
     .cardCategory=${cardCategory}
@@ -62,8 +72,9 @@ const Template: Story<CardAccountModel> = ({
 `;
 
 const cardAccountMock: CardAccountModel = {
+  id: 'card-account',
   date: '2026-06-05',
-  title: 'Titulo',
+  titleCard: 'Titulo',
   amount: {
     amount: 9_999.99,
     heading: 'xl',
@@ -122,4 +133,8 @@ export const WithDescription = Template.bind({});
 WithDescription.args = { ...cardAccountMock, descriptionTemplate };
 
 export const WithDescriptionAndImage = Template.bind({});
-WithDescriptionAndImage.args = { ...cardAccountMock, descriptionTemplate, imageTemplate };
+WithDescriptionAndImage.args = {
+  ...cardAccountMock,
+  descriptionTemplate,
+  imageTemplate,
+};

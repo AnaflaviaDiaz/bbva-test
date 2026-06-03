@@ -24,7 +24,6 @@ const cardAccountData: CardAccountModel = {
   badgeStatus: { text: 'Status', variant: 'primary' },
   accountCategory: { categoryName: '•1234', icon: { name: 'account' } },
   cardCategory: { categoryName: 'Category', icon: { name: 'car' } },
-  hasActionButtons: true,
   primaryButtonText: 'Primary',
   handlePrimaryButton: () => console.log('Primary button clicked'),
   secondaryButtonText: 'Secondary',
@@ -76,7 +75,6 @@ export class BbvaCard extends LitElement {
       .badgeStatus=${cardAccountData.badgeStatus}
       .imageTemplate=${this.imgTemplate}
       .markerGain=${cardAccountData.marketGain}
-      ?has-action-buttons=${cardAccountData.hasActionButtons}
       .primaryButtonText=${cardAccountData.primaryButtonText}
       .handlePrimaryButton=${cardAccountData.handlePrimaryButton}
       .secondaryButtonText=${cardAccountData.secondaryButtonText}

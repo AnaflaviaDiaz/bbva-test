@@ -14,7 +14,6 @@ export default {
     badgeStatus: { control: 'object' },
     accountCategory: { control: 'object' },
     cardCategory: { control: 'object' },
-    hasActionButtons: { control: 'boolean' },
     primaryButtonText: { control: 'text' },
     secondaryButtonText: { control: 'text' },
   },
@@ -42,7 +41,6 @@ const Template: Story<CardAccountModel> = ({
   badgeStatus,
   accountCategory,
   cardCategory,
-  hasActionButtons,
   primaryButtonText,
   secondaryButtonText,
   descriptionTemplate,
@@ -56,7 +54,6 @@ const Template: Story<CardAccountModel> = ({
     .badgeStatus=${badgeStatus}
     .imageTemplate=${imageTemplate}
     .markerGain=${marketGain}
-    ?has-action-buttons=${hasActionButtons}
     .primaryButtonText=${primaryButtonText}
     .secondaryButtonText=${secondaryButtonText}
   >
@@ -79,7 +76,6 @@ const cardAccountMock: CardAccountModel = {
   badgeStatus: { text: 'Status', variant: 'secondary' },
   accountCategory: { categoryName: '•1234', icon: { name: 'account' } },
   cardCategory: { categoryName: 'Category', icon: { name: 'car' } },
-  hasActionButtons: true,
   primaryButtonText: 'Primary',
   handlePrimaryButton: () => console.log('Primary button clicked'),
   secondaryButtonText: 'Secondary',

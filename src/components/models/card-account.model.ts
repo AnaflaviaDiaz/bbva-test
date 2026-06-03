@@ -19,7 +19,6 @@ export interface CardAccountModel {
   amount?: AmountModel;
   imageTemplate?: TemplateResult;
   descriptionTemplate?: TemplateResult;
-  hasActionButtons?: boolean;
   primaryButtonText?: string;
   handlePrimaryButton?: () => void;
   secondaryButtonText?: string;

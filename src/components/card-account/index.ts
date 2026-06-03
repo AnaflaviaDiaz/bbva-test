@@ -33,10 +33,6 @@ export class CardAccount extends LitElement {
   @property({ type: Object })
   markerGain?: MarketGain;
 
-  // footer card
-  @property({ type: Boolean, attribute: 'has-action-buttons' })
-  hasActionButtons = false;
-
   @property({ attribute: false })
   imageTemplate?: TemplateResult;
 
@@ -91,35 +87,6 @@ export class CardAccount extends LitElement {
       : nothing;
   }
 
-  private get _primaryButtonTemplate(): TemplateResult | typeof nothing {
-    return this.primaryButtonText
-      ? html`<bbva-button
-          title=${this.primaryButtonText}
-          @button-click=${this.handlePrimaryButton}
-        ></bbva-button>`
-      : nothing;
-  }
-
-  private get _secondaryButtonTemplate(): TemplateResult | typeof nothing {
-    return this.secondaryButtonText
-      ? html`<bbva-button
-          title=${this.secondaryButtonText}
-          variant="secondary"
-          @button-click=${this.handleSecondaryButton}
-        ></bbva-button>`
-      : nothing;
-  }
-
-  private get _actionButtonsTemplate(): TemplateResult | typeof nothing {
-    return this.hasActionButtons
-      ? html`
-          <footer class="card-footer">
-            ${this._primaryButtonTemplate} ${this._secondaryButtonTemplate}
-          </footer>
-        `
-      : nothing;
-  }
-
   private get _badgeStatusTemplate(): TemplateResult | typeof nothing {
     return this.badgeStatus
       ? html`
@@ -149,6 +116,36 @@ export class CardAccount extends LitElement {
             .categoryName=${this.cardCategory.categoryName}
             .icon=${this.cardCategory.icon}
           ></bbva-category>
+        `
+      : nothing;
+  }
+
+  private get _primaryButtonTemplate(): TemplateResult | typeof nothing {
+    return this.primaryButtonText
+      ? html`<bbva-button
+          title=${this.primaryButtonText}
+          @button-click=${this.handlePrimaryButton}
+        ></bbva-button>`
+      : nothing;
+  }
+
+  private get _secondaryButtonTemplate(): TemplateResult | typeof nothing {
+    return this.secondaryButtonText
+      ? html`<bbva-button
+          title=${this.secondaryButtonText}
+          variant="secondary"
+          @button-click=${this.handleSecondaryButton}
+        ></bbva-button>`
+      : nothing;
+  }
+
+  // basta con que exista primary button para que muestre el footer
+  private get _actionButtonsTemplate(): TemplateResult | typeof nothing {
+    return this.primaryButtonText
+      ? html`
+          <footer class="card-footer">
+            ${this._primaryButtonTemplate} ${this._secondaryButtonTemplate}
+          </footer>
         `
       : nothing;
   }

@@ -1,4 +1,4 @@
-import { IconName } from '../icon/list.js';
+import { IconName } from '../components/icon/list.js';
 import { VariantSize } from './variant.model.js';
 
 export interface IconModel {

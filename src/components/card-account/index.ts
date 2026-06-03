@@ -7,7 +7,7 @@ import {
   CategoryModel,
   MarketGain,
   VariantHeading,
-} from '../models/index.js';
+} from '../../models/index.js';
 import { cardAccountStyles } from './card-account.styles.js';
 import { dateFormatter } from '../../utils/index.js';
 import '../amount/index.js';

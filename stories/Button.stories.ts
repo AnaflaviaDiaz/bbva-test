@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit';
 
 import '../src/components/button/index.js';
-import { VariantColor } from '../src/components/models/index.js';
+import { VariantColor } from '../src/models/index.js';
 
 export default {
   title: 'Button',

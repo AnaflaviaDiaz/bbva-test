@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit';
 
 import '../src/components/icon/index.js';
-import { IconModel, VariantSize } from '../src/components/models/index.js';
+import { IconModel, VariantSize } from '../src/models/index.js';
 import { IconName } from '../src/components/icon/list.js';
 
 export default {

@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit';
 
 import '../src/components/card-account/index.js';
-import { CardAccountModel } from '../src/components/models/index.js';
+import { CardAccountModel } from '../src/models/index.js';
 
 export default {
   title: 'CardAccount',

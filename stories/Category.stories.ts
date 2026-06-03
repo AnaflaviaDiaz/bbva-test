@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit';
 
 import '../src/components/category/index.js';
-import { CategoryModel, IconModel } from '../src/components/models/index.js';
+import { CategoryModel, IconModel } from '../src/models/index.js';
 
 export default {
   title: 'Category',

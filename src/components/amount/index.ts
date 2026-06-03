@@ -2,7 +2,7 @@ import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import { typographyStyles } from '../../tokens/index.js';
-import { VariantHeading } from '../models/index.js';
+import { VariantHeading } from '../../models/index.js';
 import { amountFormatter } from '../../utils/index.js';
 
 /**

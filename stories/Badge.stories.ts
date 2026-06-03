@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit';
 
 import '../src/components/badge/index.js';
-import { BadgeModel, VariantColor } from '../src/components/models/index.js';
+import { BadgeModel, VariantColor } from '../src/models/index.js';
 
 export default {
   title: 'Badge',

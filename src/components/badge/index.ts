@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-import { VariantColor } from '../models/variant.model.js';
+import { VariantColor } from '../../models/variant.model.js';
 import { badgeStyles } from './badge.styles.js';
 
 /**

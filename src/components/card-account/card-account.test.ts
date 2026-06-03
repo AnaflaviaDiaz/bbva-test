@@ -2,7 +2,7 @@
 import { expect, fixture } from '@open-wc/testing';
 import { html, TemplateResult } from 'lit';
 
-import { AmountModel, CardAccountModel } from '../models/index.js';
+import { AmountModel, CardAccountModel } from '../../models/index.js';
 import './index.js';
 import '../amount/index.js';
 import '../badge/index.js';

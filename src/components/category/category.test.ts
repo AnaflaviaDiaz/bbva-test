@@ -2,7 +2,7 @@
 import { expect, fixture, html } from '@open-wc/testing';
 
 import './index.js';
-import { IconModel } from '../models/icon.model.js';
+import { IconModel } from '../../models/icon.model.js';
 
 describe('Category', () => {
   it('should render with default values', async () => {

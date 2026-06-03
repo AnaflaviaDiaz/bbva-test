@@ -6,7 +6,7 @@ import './components/amount/index.js';
 import './components/icon/index.js';
 import './components/category/index.js';
 import './components/card-account/index.js';
-import { CardAccountModel } from './components/models/index.js';
+import { CardAccountModel } from './models/index.js';
 import { typographyStyles } from './tokens/index.js';
 
 const cardAccountData: CardAccountModel = {

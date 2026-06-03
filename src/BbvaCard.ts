@@ -18,6 +18,9 @@ const cardAccountData: CardAccountModel = {
     currency: 'EUR',
     locale: 'de-DE',
   },
+  marketGain: {
+    direction: 'up',
+  },
   badgeStatus: { text: 'Status', variant: 'primary' },
   accountCategory: { categoryName: '•1234', icon: { name: 'account' } },
   cardCategory: { categoryName: 'Category', icon: { name: 'car' } },
@@ -72,6 +75,7 @@ export class BbvaCard extends LitElement {
       .cardCategory=${cardAccountData.cardCategory}
       .badgeStatus=${cardAccountData.badgeStatus}
       .imageTemplate=${this.imgTemplate}
+      .markerGain=${cardAccountData.marketGain}
       ?has-action-buttons=${cardAccountData.hasActionButtons}
       .primaryButtonText=${cardAccountData.primaryButtonText}
       .handlePrimaryButton=${cardAccountData.handlePrimaryButton}

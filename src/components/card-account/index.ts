@@ -7,6 +7,7 @@ import {
   AmountModel,
   BadgeModel,
   CategoryModel,
+  MarketGain,
   VariantHeading,
 } from '../models/index.js';
 import { cardAccountStyles } from './card-account.styles.js';
@@ -23,6 +24,9 @@ export class CardAccount extends LitElement {
   // body card
   @property({ type: String, attribute: 'title' })
   titleCard = '';
+
+  @property({ type: Object })
+  markerGain?: MarketGain;
 
   // footer card
   @property({ type: Boolean, attribute: 'has-action-buttons' })
@@ -69,6 +73,16 @@ export class CardAccount extends LitElement {
           .locale=${this.amount.locale as string}
           .heading=${heading}
         ></bbva-amount>`
+      : nothing;
+  }
+
+  private get _gainMarketTemplate(): TemplateResult | typeof nothing {
+    return this.markerGain
+      ? html`
+          <span style="${this.markerGain.color || 'currentColor'}"
+            >${this.markerGain.direction === 'up' ? '▲' : '▼'}</span
+          >
+        `
       : nothing;
   }
 
@@ -140,7 +154,9 @@ export class CardAccount extends LitElement {
         <!-- TODO: agregar trend component -->
         <header class="card-header">
           <time datetime="${this.date}">${dateFormatter(this.date)}</time>
-          ${this._amountTemplate()}
+          <div class="card-header__amount">
+            ${this._amountTemplate()} ${this._gainMarketTemplate}
+          </div>
         </header>
 
         <div class="card-content">

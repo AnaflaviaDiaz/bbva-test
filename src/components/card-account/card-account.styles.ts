@@ -33,6 +33,10 @@ export const cardAccountStyles = [
       background-color: var(--color-primary);
     }
 
+    .card-header__amount {
+      display: flex;
+    }
+
     .card-content__image {
       height: 100%;
       width: auto;
@@ -76,8 +80,8 @@ export const cardAccountStyles = [
       }
 
       .card-content__image {
-        width: 40%;
-        min-width: auto;
+        width: 20rem;
+        height: 20rem;
       }
     }
   `,

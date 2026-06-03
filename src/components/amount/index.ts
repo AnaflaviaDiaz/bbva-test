@@ -1,9 +1,9 @@
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-import { typographyStyles } from '../../tokens/typography.styles.js';
-import { VariantHeading } from '../models/variant.model.js';
-import { amountFormatter } from '../../utils/amount-formatter.js';
+import { typographyStyles } from '../../tokens/index.js';
+import { VariantHeading } from '../models/index.js';
+import { amountFormatter } from '../../utils/index.js';
 
 @customElement('bbva-amount')
 export class Amount extends LitElement {

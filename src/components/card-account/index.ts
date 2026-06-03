@@ -10,7 +10,7 @@ import {
   VariantHeading,
 } from '../models/index.js';
 import { cardAccountStyles } from './card-account.styles.js';
-import { dateFormatter } from '../../utils/date-formatter.js';
+import { dateFormatter } from '../../utils/index.js';
 
 @customElement('bbva-card-account')
 export class CardAccount extends LitElement {

@@ -1,5 +1,8 @@
 import { svg } from 'lit';
 
+/**
+ * Catálogo de íconos disponibles
+ */
 export const icons = {
   card: svg`
     <svg viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="card icon">

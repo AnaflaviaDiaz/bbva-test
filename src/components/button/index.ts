@@ -4,17 +4,33 @@ import { customElement, property } from 'lit/decorators.js';
 import { VariantColor } from '../models/variant.model.js';
 import { buttonStyles } from './button.styles.js';
 
+/**
+ * @element bbva-button
+ *
+ * @example
+ * <bbva-button
+ *   title="Click me"
+ *   variant="secondary"
+ *   type="submit"
+ *   disabled
+ * ></bbva-button>
+ */
 @customElement('bbva-button')
 export class Button extends LitElement {
   static styles = [buttonStyles];
 
-  @property({ type: String, attribute: 'title' }) titleButton = '';
+  /** Texto del botón */
+  @property({ type: String, attribute: 'title' })
+  titleButton = '';
 
-  @property({ type: String, reflect: true }) variant: VariantColor = 'primary';
+  @property({ type: String, reflect: true })
+  variant: VariantColor = 'primary';
 
-  @property({ type: Boolean }) disabled = false;
+  @property({ type: Boolean })
+  disabled = false;
 
-  @property({ type: String }) type: 'button' | 'submit' = 'button';
+  @property({ type: String })
+  type: 'button' | 'submit' = 'button';
 
   private _handleClick() {
     this.dispatchEvent(

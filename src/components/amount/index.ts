@@ -5,17 +5,41 @@ import { typographyStyles } from '../../tokens/index.js';
 import { VariantHeading } from '../models/index.js';
 import { amountFormatter } from '../../utils/index.js';
 
+/**
+ * Muestra el monto formateado
+ *
+ * @element bbva-amount
+ *
+ * @example
+ * <bbva-amount
+ *   amount="2500"
+ *   currency="USD"
+ *   heading="2xl-bold"
+ * ></bbva-amount>
+ */
 @customElement('bbva-amount')
 export class Amount extends LitElement {
   static styles = [typographyStyles];
 
-  @property({ type: Number }) amount = 0;
+  /** Monto a mostrar */
+  @property({ type: Number })
+  amount = 0;
 
-  @property({ type: String }) currency = 'EUR';
+  /** Código ISO 4217 de la moneda.
+   * @example 'USD' | 'EUR' | 'JPY'
+   */
+  @property({ type: String })
+  currency = 'EUR';
 
-  @property({ type: String }) locale = navigator.language;
+  /** Para formatear el monto
+   * @example 'de-DE' | 'es-ES' | 'en-US'
+   */
+  @property({ type: String })
+  locale = navigator.language;
 
-  @property({ type: String }) heading?: VariantHeading;
+  /** Variante para el tamaño del monto */
+  @property({ type: String })
+  heading?: VariantHeading;
 
   private get _formattedAmount(): string {
     return amountFormatter({

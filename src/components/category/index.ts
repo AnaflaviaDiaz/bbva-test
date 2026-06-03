@@ -5,13 +5,26 @@ import '../icon/index.js';
 import { IconModel } from '../models/index.js';
 import { categoryStyles } from './category.styles.js';
 
+/**
+ * Categoría con ícono opcional
+ * @element bbva-category
+ *
+ * @example
+ * <bbva-category
+ *   category-name="Category"
+ *   .icon=${{ name: 'card', color: 'red', size: 'lg' }}
+ * ></bbva-category>
+ */
 @customElement('bbva-category')
 export class Category extends LitElement {
   static styles = [categoryStyles];
 
-  @property({ type: String, attribute: 'category-name' }) categoryName = '';
+  /** Texto de la categoría */
+  @property({ type: String, attribute: 'category-name' })
+  categoryName = '';
 
-  @property({ type: Object }) icon?: IconModel;
+  @property({ type: Object })
+  icon?: IconModel;
 
   private get _iconTemplate(): TemplateResult | typeof nothing {
     if (!this.icon) return nothing;

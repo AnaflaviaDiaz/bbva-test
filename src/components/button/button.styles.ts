@@ -9,7 +9,8 @@ export const buttonStyles = [
       background-color: var(--btn-bg-primary);
       color: var(--btn-color-primary);
 
-      &:hover {
+      &:hover,
+      &:focus-visible {
         background-color: var(--btn-bg-hover-primary);
       }
     }
@@ -18,7 +19,8 @@ export const buttonStyles = [
       background-color: var(--btn-bg-primary-light);
       color: var(--btn-color-primary-light);
 
-      &:hover {
+      &:hover,
+      &:focus-visible {
         background-color: var(--btn-bg-hover-primary-light);
       }
     }
@@ -27,7 +29,8 @@ export const buttonStyles = [
       background-color: var(--btn-bg-secondary);
       color: var(--btn-color-secondary);
 
-      &:hover {
+      &:hover,
+      &:focus-visible {
         background-color: var(--btn-bg-hover-secondary);
       }
     }

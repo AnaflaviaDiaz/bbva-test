@@ -5,6 +5,13 @@ import { icons, IconName } from './list.js';
 import { VariantSize } from '../models/index.js';
 import { iconStyles } from './icon.styles.js';
 
+/**
+ * Ícono personalizado basado en SVG
+ * @element bbva-icon
+ *
+ * @example
+ * <bbva-icon name="card" color="red" size="lg"></bbva-icon>
+ */
 @customElement('bbva-icon')
 export class Icon extends LitElement {
   @property({ type: String }) name: IconName = 'card';

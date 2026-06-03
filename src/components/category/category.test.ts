@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import { expect, fixture, html } from '@open-wc/testing';
 
 import './index.js';
@@ -32,16 +33,18 @@ describe('Category', () => {
     const span = element.shadowRoot?.querySelector('span');
     expect(span?.textContent).to.equal('Card');
 
-    const bbvaIcon = element.shadowRoot?.querySelector('bbva-icon') as Element & {
+    const bbvaIcon = element.shadowRoot?.querySelector(
+      'bbva-icon',
+    ) as Element & {
       name: string;
       color: string;
       size: string;
     };
-    // eslint-disable-next-line no-unused-expressions
+
     expect(bbvaIcon).to.exist;
-    expect((bbvaIcon).name).to.equal('card');
-    expect((bbvaIcon).color).to.equal('red');
-    expect((bbvaIcon).size).to.equal('lg');
+    expect(bbvaIcon.name).to.equal('card');
+    expect(bbvaIcon.color).to.equal('red');
+    expect(bbvaIcon.size).to.equal('lg');
   });
 
   it('should render with icon and default size icon', async () => {
@@ -50,7 +53,10 @@ describe('Category', () => {
       color: 'red',
     };
     const element = await fixture(
-      html`<bbva-category category-name="Card Test" .icon=${icon}></bbva-category>`,
+      html`<bbva-category
+        category-name="Card Test"
+        .icon=${icon}
+      ></bbva-category>`,
     );
 
     const span = element.shadowRoot?.querySelector('span');
@@ -63,7 +69,7 @@ describe('Category', () => {
       color: string;
       size: string;
     };
-    // eslint-disable-next-line no-unused-expressions
+    
     expect(bbvaIcon).to.exist;
     expect(bbvaIcon.name).to.equal('card');
     expect(bbvaIcon.color).to.equal('red');

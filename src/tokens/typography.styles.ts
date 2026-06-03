@@ -2,6 +2,13 @@ import { css } from 'lit';
 
 import { baseStyles } from './base.styles.js';
 
+/**
+ * Estilos tipográficos reutilizables para componentes Lit.
+ *
+ * Incluye títulos, listas y reglas base de texto compartidas.
+ *
+ * @type {import('lit').CSSResultGroup}
+ */
 export const typographyStyles = [
   baseStyles,
   css`

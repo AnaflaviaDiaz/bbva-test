@@ -1,5 +1,9 @@
 import { css } from 'lit';
-
+/**
+ * Variables como colores y fuente para componentes Lit.
+ *
+ * @type {import('lit').CSSResult}
+ */
 export const baseStyles = css`
   :host {
     --bg-primary: #001391;

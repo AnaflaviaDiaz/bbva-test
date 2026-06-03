@@ -32,3 +32,9 @@ export class Icon extends LitElement {
     `;
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'bbva-icon': Icon;
+  }
+}

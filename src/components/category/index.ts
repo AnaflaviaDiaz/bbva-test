@@ -33,6 +33,7 @@ export class Category extends LitElement {
       .color=${this.icon.color ?? 'currentColor'}
       .size=${this.icon.size ?? 'md'}
       .name=${this.icon.name}
+      aria-hidden="true"
     ></bbva-icon>`;
   }
 
@@ -41,5 +42,11 @@ export class Category extends LitElement {
       ${this._iconTemplate}
       <span>${this.categoryName}</span>
     </div>`;
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'bbva-category': Category;
   }
 }

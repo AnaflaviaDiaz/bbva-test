@@ -57,3 +57,9 @@ export class Amount extends LitElement {
     return html` <p class=${this._amountClass}>${this._formattedAmount}</p>`;
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'bbva-amount': Amount;
+  }
+}

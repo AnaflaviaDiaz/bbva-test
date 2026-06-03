@@ -55,3 +55,9 @@ export class Button extends LitElement {
     `;
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'bbva-button': Button;
+  }
+}

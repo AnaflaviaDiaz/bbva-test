@@ -17,7 +17,7 @@ export const badgeStyles = [
     }
 
     .badge__secondary {
-      background-color: var(bg-secondary);
+      background-color: var(--bg-secondary);
       color: var(--color-secondary);
     }
 

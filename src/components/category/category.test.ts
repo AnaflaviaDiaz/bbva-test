@@ -69,7 +69,7 @@ describe('Category', () => {
       color: string;
       size: string;
     };
-    
+
     expect(bbvaIcon).to.exist;
     expect(bbvaIcon.name).to.equal('card');
     expect(bbvaIcon.color).to.equal('red');

@@ -1,30 +1,102 @@
 <!doctype html>
 <html lang="en-GB">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <style>
-    body {
-      background: #fafafa;
-    }
-  </style>
-</head>
-<body>
-  <div id="demo"></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <style>
+      body {
+        background: #fafafa;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="demo"></div>
 
-  <script type="module">
-    import { html, render } from 'lit';
-    import '../dist/src/bbva-card.js';
+    <script type="module">
+      import { html, render } from 'lit';
+      import '../dist/src/components/index.js';
 
-    const header = 'Hello owc World!';
-    render(
-      html`
-        <bbva-card .header=${header}>
-          some light-dom
-        </bbva-card>
-      `,
-      document.querySelector('#demo')
-    );
-  </script>
-</body>
+      const descriptionTemplate = html`
+        <p>Description</p>
+        <ul>
+          <li>Hola</li>
+          <li>Hola</li>
+          <li>
+            Hola que tal Hola que tal Hola que talHola que tal
+            <strong> Hola que talHola que </strong>
+            tal Hola que tal Hola que tal Hola que tal Hola que tal Hola que tal
+            Hola que tal Hola que tal
+          </li>
+          <li>
+            Hola que tal Hola que tal Hola que talHola que tal
+            <strong> Hola que talHola que </strong>
+            tal Hola que tal Hola que tal Hola que tal Hola que tal Hola que tal
+            Hola que tal Hola que tal
+          </li>
+          <li>
+            Hola que tal Hola que tal Hola que talHola que tal
+            <strong> Hola que talHola que </strong>
+            tal Hola que tal Hola que tal Hola que tal Hola que tal Hola que tal
+            Hola que tal Hola que tal
+          </li>
+        </ul>
+      `;
+
+      const imgTemplate = html`<img
+        src="https://www.bbva.es/content/dam/public-web/bbvaes/images/personas/productos/cuentas/cuenta-online/promo-1200/1080x720-cuenta-online-saldos.im1774256762253im.jpg?imwidth=768"
+        alt="BBVA Logo"
+        width="100%"
+      />`;
+
+      const cardAccountMockData = {
+        id: 'card-account',
+        date: '2026-06-05',
+        titleCard: 'Titulo',
+        amount: {
+          amount: 9_999.99,
+          heading: 'xl',
+          currency: 'EUR',
+          locale: 'de-DE',
+        },
+        imageTemplate: imgTemplate,
+        descriptionTemplate,
+        marketGain: {
+          direction: 'up',
+        },
+        badgeStatus: { text: 'Status', variant: 'secondary' },
+        accountCategory: { categoryName: '•1234', icon: { name: 'account' } },
+        cardCategory: { categoryName: 'Category', icon: { name: 'car' } },
+        primaryButtonText: 'Primary',
+        handlePrimaryButton: () => console.log('Primary button clicked'),
+        secondaryButtonText: 'Secondary',
+        handleSecondaryButton: () => console.log('Secondary button clicked'),
+      };
+
+      render(
+        html`
+          <bbva-card-account
+            .idCard=${cardAccountMockData.id}
+            .date=${cardAccountMockData.date}
+            .titleCard=${cardAccountMockData.titleCard}
+            .amount=${cardAccountMockData.amount}
+            .accountCategory=${cardAccountMockData.accountCategory}
+            .cardCategory=${cardAccountMockData.cardCategory}
+            .badgeStatus=${cardAccountMockData.badgeStatus}
+            .imageTemplate=${cardAccountMockData.imageTemplate}
+            .markerGain=${cardAccountMockData.marketGain}
+            .primaryButtonText=${cardAccountMockData.primaryButtonText}
+            .handlePrimaryButton=${cardAccountMockData.handlePrimaryButton}
+            .secondaryButtonText=${cardAccountMockData.secondaryButtonText}
+            .handleSecondaryButton=${cardAccountMockData.handleSecondaryButton}
+          >
+            ${cardAccountMockData.descriptionTemplate}
+          </bbva-card-account>
+        `,
+        document.querySelector('#demo'),
+      );
+    </script>
+  </body>
 </html>

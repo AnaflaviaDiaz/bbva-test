@@ -302,7 +302,6 @@ describe('CardACcount', () => {
       if (primaryButton) await primaryButton.updateComplete;
       expect(primaryButton?.getAttribute('title')).to.equal('Primary Button');
 
-      // Click on the native button inside shadow DOM
       const primaryNativeButton =
         primaryButton?.shadowRoot?.querySelector('button');
       primaryNativeButton?.click();

@@ -117,7 +117,7 @@ export class CardAccount extends LitElement {
     if (!this.markerGain) return nothing;
 
     const ariaMarkerGain =
-      this.markerGain.direction === 'up' ? 'Aumento' : 'Disminución';
+      this.markerGain.direction === 'up' ? 'Ganancia' : 'Disminución';
 
     return html`
       <span

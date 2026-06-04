@@ -43,7 +43,7 @@ Este proyecto tiene una cobertura de:
 - 100% Functions 25/25
 - 100% Lines 897/897
 
-## Analisis de código y formateo
+## Análisis de código y formateo
 
 Para analizar el proyecto en busca de errores de linting y de formato:
 
@@ -70,7 +70,7 @@ npm run storybook
 
 - Arquitectura del proyecto: Web Components con Lit y estructura de Design System.
 
-- Lenguaje: Typescript para un tipado estricto y detectar errores en tiempo de desarrollo, además, facilita el mantenimiento para proyectos grandes.
+- Lenguaje: Typescript para un tipado estricto y detectar errores en tiempo de desarrollo; además, facilita el mantenimiento para proyectos grandes.
 
 - Documentación de componentes: Storybook y uso de pruebas de accesibilidad integradas.
 
@@ -78,7 +78,7 @@ npm run storybook
 
 - Testing: @web/test-runner por recomendación de OpenWebComponents y pruebas unitarias con pruebas de integración.
 
-- Formateo de Código y Detección de errores: Prettier y Eslint.
+- Formateo de código y detección de errores: Prettier y Eslint.
 
 - Accesibilidad: WCAG 2.2 nivel AA.
 
@@ -86,7 +86,7 @@ npm run storybook
 
 - Estilos: basado en Design system con Tokens para centralizar la paleta de colores y tipografía. Nomenclatura BEM.
 
-- Estrategia de diseño: Mobile First para priorizar la creación de interfaces para dispositivos móviles antes que ordenadores.
+- Estrategia de diseño: Mobile First para priorizar la creación de interfaces para dispositivos móviles antes que para ordenadores.
 
 ## Consideraciones de accesibilidad
 
@@ -94,7 +94,7 @@ npm run storybook
 
 - Estructura semántica
 
-- Imágenes o íconos con texto alternativo
+- Imágenes o iconos con texto alternativo
 
 - Uso adecuado de ARIA
 
